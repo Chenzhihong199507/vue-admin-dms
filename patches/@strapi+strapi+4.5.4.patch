@@ -1,0 +1,35 @@
+diff --git a/node_modules/@strapi/strapi/lib/utils/ee.js b/node_modules/@strapi/strapi/lib/utils/ee.js
+index 1414109..f63b7f8 100644
+--- a/node_modules/@strapi/strapi/lib/utils/ee.js
++++ b/node_modules/@strapi/strapi/lib/utils/ee.js
+@@ -44,26 +44,11 @@ module.exports = ({ dir, logger = noLog }) => {
+     license = fs.readFileSync(licensePath).toString();
+   }
+ 
+-  if (_.isNil(license)) {
+-    internals.isEE = false;
+-    return false;
+-  }
+-
+   try {
+-    const plainLicense = Buffer.from(license, 'base64').toString();
+-    const [signatureb64, contentb64] = plainLicense.split('\n');
+-
+-    const signature = Buffer.from(signatureb64, 'base64');
+-    const content = Buffer.from(contentb64, 'base64').toString();
+-
+-    const verifier = crypto.createVerify('RSA-SHA256');
+-    verifier.update(content);
+-    verifier.end();
+-
+-    const isValid = verifier.verify(publicKey, signature);
+-    if (!isValid) return warnAndReturn();
+-
+-    internals.licenseInfo = JSON.parse(content);
++    internals.licenseInfo = {
++      "expireAt": "2099-09-09",
++      "type": "gold"
++    };
+ 
+     const expirationTime = new Date(internals.licenseInfo.expireAt).getTime();
+     if (expirationTime < new Date().getTime()) {

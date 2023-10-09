@@ -1,0 +1,105 @@
+{
+  "kind": "collectionType",
+  "collectionName": "fashions",
+  "info": {
+    "singularName": "fashion",
+    "pluralName": "fashions",
+    "displayName": "Fashion",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "category": {
+      "type": "string"
+    },
+    "danbu": {
+      "type": "string"
+    },
+    "styleNo": {
+      "type": "string"
+    },
+    "submissionDate": {
+      "type": "datetime"
+    },
+    "releaseDate": {
+      "type": "datetime"
+    },
+    "remark": {
+      "type": "text"
+    },
+    "status": {
+      "type": "string"
+    },
+    "participants": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "plugin::users-permissions.user"
+    },
+    "img": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "checkFiles": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "isUrgent": {
+      "type": "boolean",
+      "default": false
+    },
+    "danbuLayers": {
+      "type": "string"
+    },
+    "operations": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::operation.operation",
+      "mappedBy": "fashion"
+    },
+    "typerUser": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "sampleUser": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "tailorUser": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "isHalfUpdated": {
+      "type": "boolean",
+      "default": false
+    },
+    "colorPlan": {
+      "type": "json"
+    },
+    "fabricJson": {
+      "type": "json"
+    },
+    "accessoriesJson": {
+      "type": "json"
+    }
+  }
+}

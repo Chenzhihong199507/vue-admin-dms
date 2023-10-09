@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "operations",
+  "info": {
+    "singularName": "operation",
+    "pluralName": "operations",
+    "displayName": "Operation",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "fashion": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::fashion.fashion",
+      "inversedBy": "operations"
+    },
+    "date": {
+      "type": "datetime"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "operStatus": {
+      "type": "string"
+    }
+  }
+}

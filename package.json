@@ -1,0 +1,36 @@
+{
+  "name": "lxyw-dms",
+  "private": true,
+  "version": "0.1.0",
+  "description": "A Strapi application",
+  "scripts": {
+    "develop": "strapi develop",
+    "start": "strapi start",
+    "build": "strapi build",
+    "strapi": "strapi",
+    "postinstall": "patch-package"
+  },
+  "dependencies": {
+    "@strapi/plugin-color-picker": "^4.5.4",
+    "@strapi/plugin-graphql": "^4.5.4",
+    "@strapi/plugin-i18n": "^4.5.4",
+    "@strapi/plugin-users-permissions": "^4.5.4",
+    "@strapi/strapi": "^4.5.4",
+    "mysql": "2.18.1",
+    "patch-package": "^6.4.7"
+  },
+  "author": {
+    "name": "geroge@huiwei.tech"
+  },
+  "strapi": {
+    "uuid": "8156b464-3486-4fc8-a972-b993cebedd51"
+  },
+  "engines": {
+    "node": ">=12.x.x <=16.x.x",
+    "npm": ">=6.0.0"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@types/styled-components": "^5.1.26"
+  }
+}

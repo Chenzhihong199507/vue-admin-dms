@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "fabrics",
+  "info": {
+    "singularName": "fabric",
+    "pluralName": "fabrics",
+    "displayName": "Fabric",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "supplier": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::supplier.supplier"
+    },
+    "colorNo": {
+      "type": "string"
+    },
+    "price": {
+      "type": "string"
+    },
+    "remark": {
+      "type": "text"
+    }
+  }
+}

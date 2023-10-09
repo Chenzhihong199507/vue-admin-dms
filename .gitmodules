@@ -1,0 +1,3 @@
+[submodule "src/plugins/strapi-plugin-ckeditor"]
+	path = src/plugins/strapi-plugin-ckeditor
+	url = https://github.com/ckeditor/strapi-plugin-ckeditor.git

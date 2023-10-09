@@ -1,0 +1,212 @@
+diff --git a/node_modules/@strapi/admin/admin/src/components/AuthenticatedApp/utils/api.js b/node_modules/@strapi/admin/admin/src/components/AuthenticatedApp/utils/api.js
+index 2f03015..71bb6a2 100644
+--- a/node_modules/@strapi/admin/admin/src/components/AuthenticatedApp/utils/api.js
++++ b/node_modules/@strapi/admin/admin/src/components/AuthenticatedApp/utils/api.js
+@@ -19,7 +19,7 @@ const fetchStrapiLatestRelease = async (toggleNotification) => {
+         type: 'info',
+         message: { id: 'notification.version.update.message' },
+         link: {
+-          url: `https://github.com/strapi/strapi/releases/tag/${tag_name}`,
++          url: `https://huiwei.tech`,
+           label: {
+             id: 'global.see-more',
+           },
+diff --git a/node_modules/@strapi/admin/admin/src/hooks/useReleaseNotification/index.js b/node_modules/@strapi/admin/admin/src/hooks/useReleaseNotification/index.js
+index 556e42f..6d05cd9 100644
+--- a/node_modules/@strapi/admin/admin/src/hooks/useReleaseNotification/index.js
++++ b/node_modules/@strapi/admin/admin/src/hooks/useReleaseNotification/index.js
+@@ -13,7 +13,7 @@ const useReleaseNotification = () => {
+         type: 'info',
+         message: { id: 'notification.version.update.message' },
+         link: {
+-          url: `https://github.com/strapi/strapi/releases/tag/${latestStrapiReleaseTag}`,
++          url: `https://huiwei.tech`,
+           label: {
+             id: 'global.see-more',
+           },
+diff --git a/node_modules/@strapi/admin/admin/src/pages/AuthPage/components/Login/BaseLogin.js b/node_modules/@strapi/admin/admin/src/pages/AuthPage/components/Login/BaseLogin.js
+index 2c42fdb..bc4e1d0 100644
+--- a/node_modules/@strapi/admin/admin/src/pages/AuthPage/components/Login/BaseLogin.js
++++ b/node_modules/@strapi/admin/admin/src/pages/AuthPage/components/Login/BaseLogin.js
+@@ -156,16 +156,6 @@ const Login = ({ onSubmit, schema, children }) => {
+         </Formik>
+         {children}
+       </LayoutContent>
+-      <Flex justifyContent="center">
+-        <Box paddingTop={4}>
+-          <Link to="/auth/forgot-password">
+-            {formatMessage({
+-              id: 'Auth.link.forgot-password',
+-              defaultMessage: 'Forgot your password?',
+-            })}
+-          </Link>
+-        </Box>
+-      </Flex>
+     </Main>
+   );
+ };
+diff --git a/node_modules/@strapi/admin/admin/src/pages/HomePage/ContentBlocks.js b/node_modules/@strapi/admin/admin/src/pages/HomePage/ContentBlocks.js
+index 9feb7bb..cc29614 100644
+--- a/node_modules/@strapi/admin/admin/src/pages/HomePage/ContentBlocks.js
++++ b/node_modules/@strapi/admin/admin/src/pages/HomePage/ContentBlocks.js
+@@ -23,7 +23,7 @@ const ContentBlocks = () => {
+   return (
+     <Stack spacing={5}>
+       <BlockLink
+-        href="https://strapi.io/resource-center"
++        href="https://huiwei.tech"
+         target="_blank"
+         rel="noopener noreferrer nofollow"
+         onClick={() => handleClick('didClickonReadTheDocumentationSection')}
+@@ -42,7 +42,7 @@ const ContentBlocks = () => {
+         />
+       </BlockLink>
+       <BlockLink
+-        href="https://strapi.io/starters"
++        href="https://huiwei.tech"
+         target="_blank"
+         rel="noopener noreferrer nofollow"
+         onClick={() => handleClick('didClickonCodeExampleSection')}
+@@ -61,7 +61,7 @@ const ContentBlocks = () => {
+         />
+       </BlockLink>
+       <BlockLink
+-        href="https://strapi.io/blog/categories/tutorials"
++        href="https://huiwei.tech"
+         target="_blank"
+         rel="noopener noreferrer nofollow"
+         onClick={() => handleClick('didClickonTutorialSection')}
+@@ -80,7 +80,7 @@ const ContentBlocks = () => {
+         />
+       </BlockLink>
+       <BlockLink
+-        href="https://strapi.io/blog"
++        href="https://huiwei.tech"
+         target="_blank"
+         rel="noopener noreferrer nofollow"
+         onClick={() => handleClick('didClickonBlogSection')}
+diff --git a/node_modules/@strapi/admin/admin/src/pages/HomePage/HomeHeader.js b/node_modules/@strapi/admin/admin/src/pages/HomePage/HomeHeader.js
+index a846220..bc63f09 100644
+--- a/node_modules/@strapi/admin/admin/src/pages/HomePage/HomeHeader.js
++++ b/node_modules/@strapi/admin/admin/src/pages/HomePage/HomeHeader.js
+@@ -49,7 +49,7 @@ const HomeHeader = ({ hasCreatedContentType, onCreateCT }) => {
+                 })}
+           </WordWrap>
+           {hasCreatedContentType ? (
+-            <Link isExternal href="https://strapi.io/blog">
++            <Link isExternal href="https://huiwei.tech">
+               {formatMessage({
+                 id: 'app.components.HomePage.button.blog',
+                 defaultMessage: 'See more on the blog',
+diff --git a/node_modules/@strapi/admin/admin/src/pages/HomePage/SocialLinks.js b/node_modules/@strapi/admin/admin/src/pages/HomePage/SocialLinks.js
+index 5844896..c29ae5f 100644
+--- a/node_modules/@strapi/admin/admin/src/pages/HomePage/SocialLinks.js
++++ b/node_modules/@strapi/admin/admin/src/pages/HomePage/SocialLinks.js
+@@ -150,48 +150,6 @@ const SocialLinks = () => {
+       paddingBottom={6}
+       shadow="tableShadow"
+     >
+-      <Box paddingBottom={7}>
+-        <Stack spacing={5}>
+-          <Stack spacing={3}>
+-            <Typography variant="delta" as="h2" id="join-the-community">
+-              {formatMessage({
+-                id: 'app.components.HomePage.community',
+-                defaultMessage: 'Join the community',
+-              })}
+-            </Typography>
+-            <Typography textColor="neutral600">
+-              {formatMessage({
+-                id: 'app.components.HomePage.community.content',
+-                defaultMessage:
+-                  'Discuss with team members, contributors and developers on different channels',
+-              })}
+-            </Typography>
+-          </Stack>
+-          <Link href="https://feedback.strapi.io/" isExternal endIcon={<ExternalLink />}>
+-            {formatMessage({
+-              id: 'app.components.HomePage.roadmap',
+-              defaultMessage: 'See our road map',
+-            })}
+-          </Link>
+-        </Stack>
+-      </Box>
+-      <GridGap>
+-        {socialLinks.map((socialLink) => {
+-          return (
+-            <GridItem col={6} s={12} key={socialLink.name}>
+-              <LinkCustom
+-                size="L"
+-                startIcon={socialLink.icon}
+-                variant="tertiary"
+-                href={socialLink.link}
+-                isExternal
+-              >
+-                {socialLink.name}
+-              </LinkCustom>
+-            </GridItem>
+-          );
+-        })}
+-      </GridGap>
+     </Box>
+   );
+ };
+diff --git a/node_modules/@strapi/admin/admin/src/pages/ProfilePage/index.js b/node_modules/@strapi/admin/admin/src/pages/ProfilePage/index.js
+index a0c6e8a..a82a2e7 100644
+--- a/node_modules/@strapi/admin/admin/src/pages/ProfilePage/index.js
++++ b/node_modules/@strapi/admin/admin/src/pages/ProfilePage/index.js
+@@ -455,7 +455,7 @@ const ProfilePage = () => {
+                                   <DocumentationLink
+                                     target="_blank"
+                                     rel="noopener noreferrer"
+-                                    href="https://docs.strapi.io/developer-docs/latest/development/admin-customization.html#locales"
++                                    href="https://huiwei.tech"
+                                   >
+                                     {formatMessage({
+                                       id: 'Settings.profile.form.section.experience.documentation',
+diff --git a/node_modules/@strapi/admin/admin/src/pages/SettingsPage/pages/ApplicationInfosPage/index.js b/node_modules/@strapi/admin/admin/src/pages/SettingsPage/pages/ApplicationInfosPage/index.js
+index 1adc22f..f4068ca 100644
+--- a/node_modules/@strapi/admin/admin/src/pages/SettingsPage/pages/ApplicationInfosPage/index.js
++++ b/node_modules/@strapi/admin/admin/src/pages/SettingsPage/pages/ApplicationInfosPage/index.js
+@@ -118,8 +118,8 @@ const ApplicationInfosPage = () => {
+                     <Link
+                       href={
+                         appInfos.communityEdition
+-                          ? 'https://discord.strapi.io'
+-                          : 'https://support.strapi.io/support/home'
++                          ? 'https://huiwei.tech'
++                          : 'https://huiwei.tech'
+                       }
+                       isExternal
+                       endIcon={<ExternalLink />}
+@@ -152,7 +152,7 @@ const ApplicationInfosPage = () => {
+                   <GridItem col={6} s={12}>
+                     {shouldUpdateStrapi && (
+                       <Link
+-                        href={`https://github.com/strapi/strapi/releases/tag/${latestStrapiReleaseTag}`}
++                        href={`https://huiwei.tech`}
+                         isExternal
+                         endIcon={<ExternalLink />}
+                       >
+@@ -165,7 +165,7 @@ const ApplicationInfosPage = () => {
+                   </GridItem>
+                   <GridItem col={6} s={12}>
+                     <Link
+-                      href="https://strapi.io/pricing-self-hosted"
++                      href="https://huiwei.tech"
+                       isExternal
+                       endIcon={<ExternalLink />}
+                     >
+diff --git a/node_modules/@strapi/admin/index.html b/node_modules/@strapi/admin/index.html
+index a00a161..4793dc4 100644
+--- a/node_modules/@strapi/admin/index.html
++++ b/node_modules/@strapi/admin/index.html
+@@ -6,7 +6,7 @@
+     <!-- Make the page mobile compatible -->
+     <meta name="viewport" content="width=device-width, initial-scale=1" />
+     <meta name="mobile-web-app-capable" content="yes" />
+-    <title>Strapi Admin</title>
++    <title>HuiWei CMS Admin</title>
+   </head>
+   <body>
+     <!-- The app hooks into this div -->
